@@ -17,10 +17,11 @@ public class Gasto {
     private String tags;
 
     //Constructors
-
+    //Construtor vazio para uso do hibernate
     public Gasto() {
     }
 
+    //Construtor sem id para o GastoRequest
     public Gasto(String nomePessoa, String descricao, Double valor, String tags) {
         this.nomePessoa = nomePessoa;
         this.descricao = descricao;
@@ -29,6 +30,7 @@ public class Gasto {
         this.dataHora = LocalDateTime.now();
     }
 
+    //Construtor com id para retorno do GastoResponse
     public Gasto(Long id, String nomePessoa, String descricao, LocalDateTime dataHora, Double valor, String tags) {
         this.id = id;
         this.nomePessoa = nomePessoa;
