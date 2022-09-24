@@ -1,12 +1,12 @@
 package com.exacta.desafio.gasto;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 public class GastoRequest {
 
     private String nomePessoa;
     private String descricao;
-    private LocalDateTime dataHora;
     private Double valor;
     private String tags;
 
@@ -14,10 +14,9 @@ public class GastoRequest {
     public GastoRequest() {
     }
 
-    public GastoRequest(String nomePessoa, String descricao, LocalDateTime dataHora, Double valor, String tags) {
+    public GastoRequest(String nomePessoa, String descricao, Double valor, String tags) {
         this.nomePessoa = nomePessoa;
         this.descricao = descricao;
-        this.dataHora = dataHora;
         this.valor = valor;
         this.tags = tags;
     }
@@ -31,10 +30,6 @@ public class GastoRequest {
         return descricao;
     }
 
-    public LocalDateTime getDataHora() {
-        return dataHora;
-    }
-
     public Double getValor() {
         return valor;
     }
@@ -44,6 +39,6 @@ public class GastoRequest {
     }
 
     public Gasto toGasto(){
-        return new Gasto(nomePessoa, descricao, dataHora, valor, tags);
+        return new Gasto(nomePessoa, descricao, valor, tags);
     }
 }

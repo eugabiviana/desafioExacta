@@ -31,9 +31,9 @@ public class GastoController {
     @PostMapping
     public ResponseEntity<GastoResponse> post(@RequestBody GastoRequest gastoRequest){
         Gasto gasto = gastoRequest.toGasto();
-        gastoService.post(gasto);
+        GastoResponse gastoResponse = gastoService.post(gasto);
 
-        return(new ResponseEntity<>(HttpStatus.CREATED));
+        return ResponseEntity.status(HttpStatus.CREATED).body(gastoResponse);
     }
 
 }

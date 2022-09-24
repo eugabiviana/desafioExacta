@@ -21,12 +21,12 @@ public class Gasto {
     public Gasto() {
     }
 
-    public Gasto(String nomePessoa, String descricao, LocalDateTime dataHora, Double valor, String tags) {
+    public Gasto(String nomePessoa, String descricao, Double valor, String tags) {
         this.nomePessoa = nomePessoa;
         this.descricao = descricao;
-        this.dataHora = dataHora;
         this.valor = valor;
         this.tags = tags;
+        this.dataHora = LocalDateTime.now();
     }
 
     public Gasto(Long id, String nomePessoa, String descricao, LocalDateTime dataHora, Double valor, String tags) {
